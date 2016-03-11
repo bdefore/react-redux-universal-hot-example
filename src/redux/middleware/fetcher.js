@@ -67,7 +67,7 @@ export default function fetcherMiddleware(req) {
         (response) => next({...rest, 'result': response.body, 'response': response, type: SUCCESS}),
         (error) => next({...rest, error, type: FAILURE})
       ).catch((error)=> {
-        console.error('FETCHdING MIDDLEWARE ERROR:', error);
+        console.error('FETCHER MIDDLEWARE ERROR:', error);
         next({...rest, error, type: FAILURE});
       });
     };
